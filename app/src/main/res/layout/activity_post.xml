@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ActivityPost"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:id="@+id/ivpost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:maxHeight="500dp"
+        android:minHeight="400dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etpost"
+        app:srcCompat="@drawable/avatar" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etpost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:paddingLeft="20dp"
+        android:textColor="@color/colorText"
+        android:theme="@style/EditTextTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/ivgaleria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/buttongallery"
+            android:padding="15dp"
+            app:srcCompat="@drawable/ic_menu_gallery" />
+
+        <Button
+            android:id="@+id/btnpost"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_margin="30dp"
+            android:background="@drawable/button"
+            android:text="Subir" />
+
+        <ImageView
+            android:id="@+id/ivcamara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/buttoncamera"
+            android:padding="15dp"
+            app:srcCompat="@drawable/ic_menu_camera" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

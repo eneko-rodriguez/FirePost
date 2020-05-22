@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorMalva">#E3E4FF</color>
+    <color name="colorAzulo">#000080</color>
+    <color name="colorOtroMensaje">#244242</color>
+    <color name="colorText">#f4f4f4</color>
+    <color name="colorTextTitle">#f4f4f4</color>
+    <color name="colorHint">#383838</color>
+
+    <color name="colorRow">#20ab9b</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorFondo">#c842f5</color>
+</resources>
