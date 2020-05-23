@@ -90,7 +90,7 @@ class SeguidosFragment(usuario:Usuario) : Fragment() {
                     }
 
                     usuarios=usr
-                    if (!usuarios.isEmpty()) {
+                    if (!usuarios.isEmpty() && tvs != null) {
                         tvs.isVisible = false
                     }
                     adapterseguidos.setDatos(usuarios)
