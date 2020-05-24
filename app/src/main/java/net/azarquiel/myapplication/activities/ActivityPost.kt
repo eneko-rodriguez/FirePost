@@ -31,6 +31,7 @@ class ActivityPost() : AppCompatActivity() {
     private lateinit var db: FirebaseFirestore
     private lateinit var storage: FirebaseStorage
     private lateinit var picker: Picker
+    private var subiendo = false
     companion object {
         const val REQUEST_PERMISSION = 200
         const val REQUEST_GALLERY = 1
@@ -66,6 +67,8 @@ class ActivityPost() : AppCompatActivity() {
         picker.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
     private fun subitPost() {
+        if(subiendo)
+            return
         if(etpost.text.toString() == ""){
             alert() {
                 title = "Tienes que escribir algo antes de subirlo"
@@ -81,6 +84,7 @@ class ActivityPost() : AppCompatActivity() {
             }.show()
             return
         }
+        subiendo = true
         Toast.makeText(this,"Subiendo...", Toast.LENGTH_SHORT).show();
 
         if(ivpost.drawable != null) {
@@ -109,10 +113,12 @@ class ActivityPost() : AppCompatActivity() {
             }.addOnSuccessListener {
                 // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
                 // ...
+
                 acabarSubir(nombre, storageRef)
             }
 
         }else if(etpost.text.toString() != ""){
+
             acabarSubirTexto()
         }
 
@@ -139,8 +145,10 @@ class ActivityPost() : AppCompatActivity() {
                     "eneKEM", "DocumentSnapshot added with ID: " + documentReference.id
 
                 )
+                subiendo = false
                 onBackPressed()
                 toast("Post subido")
+
             })
             .addOnFailureListener(OnFailureListener { e ->
                 Log.w("eneKEM", "Error adding document", e)
@@ -171,6 +179,7 @@ class ActivityPost() : AppCompatActivity() {
                     Log.d(
                         "eneKEM", "DocumentSnapshot added with ID: " + documentReference.id
                     )
+                    subiendo = false
                     onBackPressed()
                     toast("Post subido")
                 })
