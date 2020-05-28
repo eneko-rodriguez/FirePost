@@ -45,9 +45,12 @@ class ActivityComentarios : AppCompatActivity() {
         btnpostcomentario.setOnClickListener(){
             OnclikPostComentario()
         }
+        val sdf = SimpleDateFormat("dd/M/yyyy")
+
         db = FirebaseFirestore.getInstance()
         post = intent.getSerializableExtra("post") as Post
         usuario = intent.getSerializableExtra("usuario") as Usuario
+        tvfecha2.text =sdf.format(post.fecha)
         initRV()
         setListener()
     }

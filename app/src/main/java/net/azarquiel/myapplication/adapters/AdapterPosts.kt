@@ -11,6 +11,8 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.rowpost.view.*
 import net.azarquiel.kk.model.Post
 import net.azarquiel.myapplication.R
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Created by pacopulido on 7/03/20.
@@ -45,6 +47,8 @@ class AdapterPosts(val context: Context,
 
     class ViewHolder(viewlayout: View, val context: Context,val usuario:String) : RecyclerView.ViewHolder(viewlayout) {
         fun bind(dataItem: Post) {
+            val sdf = SimpleDateFormat("dd/M/yyyy")
+            itemView.tvfecha.text =sdf.format(dataItem.fecha)
             // itemview es el item de diseño
             // al que hay que poner los datos del objeto dataItem
             var cont = 0
@@ -95,6 +99,7 @@ class AdapterPosts(val context: Context,
             }
                 itemView.tvvotospost.text=cont.toString()
                 itemView.tag = dataItem
+
 
             itemView.ivborrar.isVisible = false
             itemView.ivborrar.isEnabled = false

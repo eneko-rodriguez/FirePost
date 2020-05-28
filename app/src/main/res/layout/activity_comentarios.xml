@@ -24,6 +24,17 @@
                     android:padding="15dp"
                     android:background="@color/colorRow">
 
+                    <TextView
+                        android:id="@+id/tvfecha2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+
+                        android:textColor="@color/colorText"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivpostcomentario" />
+
                     <ImageView
                         android:id="@+id/ivpostcomentario"
                         android:layout_width="match_parent"
@@ -60,11 +71,10 @@
                         app:layout_constraintTop_toBottomOf="@+id/tvusuariopostcomentario" />
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:orientation="horizontal"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/ivpostcomentario">
 
@@ -75,8 +85,7 @@
                             android:layout_weight="0"
                             android:onClick="onClickUpvote"
                             android:padding="5dp"
-                            card_view:srcCompat="@drawable/upvote"
-                            />
+                            card_view:srcCompat="@drawable/upvote" />
 
                         <ImageView
                             android:id="@+id/ivdownvotepostcomentario"
@@ -97,7 +106,7 @@
                             android:layout_weight="0"
                             android:text="TextView"
 
-                            android:textColor="@color/colorText"/>
+                            android:textColor="@color/colorText" />
 
                         <TextView
                             android:id="@+id/textView3"
@@ -107,7 +116,7 @@
                             android:layout_weight="0"
                             android:text="votos"
 
-                            android:textColor="@color/colorText"/>
+                            android:textColor="@color/colorText" />
                     </LinearLayout>
 
 

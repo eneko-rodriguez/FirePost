@@ -10,6 +10,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.rowpost.view.*
 import net.azarquiel.kk.model.Post
 import net.azarquiel.myapplication.R
+import java.text.SimpleDateFormat
 
 /**
  * Created by pacopulido on 9/10/18.
@@ -99,6 +100,8 @@ class AdapterPerfil(val context: Context,
             itemView.ivupvotepost.tag = dataItem
             itemView.ivdownvotepost.tag = dataItem
             itemView.tag = dataItem
+            val sdf = SimpleDateFormat("dd/M/yyyy")
+            itemView.tvfecha.text =sdf.format(dataItem.fecha)
 
 
         }
